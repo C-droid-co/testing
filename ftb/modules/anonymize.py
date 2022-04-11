@@ -30,11 +30,11 @@ from traceback import format_exc
 
 from pyrogram import filters
 from pyrogram.types import Chat, Message
-from wbb import LOG_GROUP_ID, SUDOERS, USERBOT_ID, USERBOT_PREFIX
-from wbb import aiohttpsession as session
-from wbb import app, app2
-from wbb.modules.userbot import eor
-from wbb.utils.functions import extract_user
+from ftb import LOG_GROUP_ID, SUDOERS, USERBOT_ID, USERBOT_PREFIX
+from ftb import aiohttpsession as session
+from ftb import app, app2
+from ftb.modules.userbot import eor
+from ftb.utils.functions import extract_user
 
 
 @app2.on_message(filters.command("anonymize", prefixes=USERBOT_PREFIX) & SUDOERS)
