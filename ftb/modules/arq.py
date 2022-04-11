@@ -22,15 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 from pyrogram import filters
-
 from wbb import app, arq
 from wbb.core.sections import section
 
 
-@app.on_message(
-    filters.command("arq")
-    & ~filters.edited
-)
+@app.on_message(filters.command("arq") & ~filters.edited)
 async def arq_stats(_, message):
     data = await arq.stats()
     if not data.ok:
