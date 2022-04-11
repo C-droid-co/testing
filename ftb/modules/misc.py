@@ -162,12 +162,12 @@ async def rtfm(_, message):
     await message.delete()
     if not message.reply_to_message:
         return await message.reply_text("Reply To A Message lol")
-    await message.reply_to_message.reply_text("Are You Lost? READ THE FUCKING DOCS!")
+    await message.reply_to_message.reply_text("Are You Lost? READ THE DOCS!")
 
 
 @app.on_message(filters.command("runs") & ~filters.edited)
 async def runs(_, message):
-    await message.reply_text((await random_line("wbb/utils/runs.txt")))
+    await message.reply_text((await random_line("ftb/utils/runs.txt")))
 
 
 @app2.on_message(filters.command("id", prefixes=USERBOT_PREFIX) & SUDOERS)
