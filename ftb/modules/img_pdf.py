@@ -29,17 +29,16 @@ import img2pdf
 from PIL import Image
 from pyrogram import filters
 from pyrogram.types import Message
-
 from wbb import app
 from wbb.core.decorators.errors import capture_err
 from wbb.core.sections import section
 
 
 async def convert(
-        main_message: Message,
-        reply_messages,
-        status_message: Message,
-        start_time: float,
+    main_message: Message,
+    reply_messages,
+    status_message: Message,
+    start_time: float,
 ):
     m = status_message
 

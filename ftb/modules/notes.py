@@ -24,17 +24,11 @@ SOFTWARE.
 from re import findall
 
 from pyrogram import filters
-
 from wbb import SUDOERS, USERBOT_ID, USERBOT_PREFIX, app, app2, eor
 from wbb.core.decorators.errors import capture_err
 from wbb.core.decorators.permissions import adminsOnly
 from wbb.core.keyboard import ikb
-from wbb.utils.dbfunctions import (
-    delete_note,
-    get_note,
-    get_note_names,
-    save_note,
-)
+from wbb.utils.dbfunctions import delete_note, get_note, get_note_names, save_note
 from wbb.utils.functions import extract_text_and_keyb
 
 __MODULE__ = "Notes"
@@ -60,10 +54,7 @@ async def save_notee(_, message):
             text="**Usage:**\nReply to a text or sticker with /save [NOTE_NAME] to save it.",
         )
 
-    elif (
-            not message.reply_to_message.text
-            and not message.reply_to_message.sticker
-    ):
+    elif not message.reply_to_message.text and not message.reply_to_message.sticker:
         await eor(
             message,
             text="__**You can only save text or stickers in notes.**__",

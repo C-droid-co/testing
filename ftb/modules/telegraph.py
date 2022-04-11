@@ -1,6 +1,5 @@
 from pyrogram import filters
 from pyrogram.types import Message
-
 from wbb import app, telegraph
 from wbb.core.decorators.errors import capture_err
 

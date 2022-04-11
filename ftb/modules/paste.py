@@ -27,7 +27,6 @@ import re
 import aiofiles
 from pyrogram import filters
 from pyrogram.types import Message
-
 from wbb import SUDOERS, USERBOT_PREFIX, app, app2, eor
 from wbb.core.decorators.errors import capture_err
 from wbb.core.keyboard import ikb
@@ -47,9 +46,7 @@ async def paste_func(_, message: Message):
     r = message.reply_to_message
 
     if not r.text and not r.document:
-        return await eor(
-            message, text="Only text and documents are supported."
-        )
+        return await eor(message, text="Only text and documents are supported.")
 
     m = await eor(message, text="Pasting...")
 

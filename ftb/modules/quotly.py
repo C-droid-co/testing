@@ -26,7 +26,6 @@ from traceback import format_exc
 
 from pyrogram import filters
 from pyrogram.types import Message
-
 from wbb import SUDOERS, USERBOT_PREFIX, app, app2, arq
 from wbb.core.decorators.errors import capture_err
 
@@ -71,9 +70,7 @@ async def quotly_func(client, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("Reply to a message to quote it.")
     if not message.reply_to_message.text:
-        return await message.reply_text(
-            "Replied message has no text, can't quote it."
-        )
+        return await message.reply_text("Replied message has no text, can't quote it.")
     m = await message.reply_text("Quoting Messages")
     if len(message.command) < 2:
         messages = [message.reply_to_message]
@@ -113,9 +110,7 @@ async def quotly_func(client, message: Message):
             )
             messages = [reply_message]
     else:
-        return await m.edit(
-            "Incorrect argument, check quotly module in help section."
-        )
+        return await m.edit("Incorrect argument, check quotly module in help section.")
     try:
         if not message:
             return await m.edit("Something went wrong.")

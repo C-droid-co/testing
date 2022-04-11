@@ -25,7 +25,6 @@ import random
 from datetime import datetime
 
 from pyrogram import filters
-
 from wbb import app
 from wbb.core.decorators.errors import capture_err
 from wbb.utils.dbfunctions import get_couple, save_couple
@@ -44,11 +43,11 @@ def dt():
 
 def dt_tom():
     a = (
-            str(int(dt()[0].split("/")[0]) + 1)
-            + "/"
-            + dt()[0].split("/")[1]
-            + "/"
-            + dt()[0].split("/")[2]
+        str(int(dt()[0].split("/")[0]) + 1)
+        + "/"
+        + dt()[0].split("/")[1]
+        + "/"
+        + dt()[0].split("/")[2]
     )
     return a
 

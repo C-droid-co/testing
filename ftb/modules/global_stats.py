@@ -25,7 +25,6 @@ import asyncio
 
 from pyrogram import filters
 from pyrogram.errors import FloodWait
-
 from wbb import BOT_ID, BOT_NAME, SUDOERS, USERBOT_NAME, app, app2
 from wbb.core.decorators.errors import capture_err
 from wbb.modules import ALL_MODULES
@@ -61,7 +60,6 @@ async def clean_db(_, message):
         except Exception:
             await remove_served_chat(served_chat)
             served_chats.remove(served_chat)
-            pass
     await m.edit("**Database Cleaned.**")
 
 

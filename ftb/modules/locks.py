@@ -24,7 +24,6 @@ SOFTWARE.
 from pyrogram import filters
 from pyrogram.errors.exceptions.bad_request_400 import ChatNotModified
 from pyrogram.types import ChatPermissions
-
 from wbb import SUDOERS, app
 from wbb.core.decorators.errors import capture_err
 from wbb.core.decorators.permissions import adminsOnly
@@ -78,9 +77,7 @@ async def tg_lock(message, permissions: list, perm: str, lock: bool):
     permissions = {perm: True for perm in list(set(permissions))}
 
     try:
-        await app.set_chat_permissions(
-            message.chat.id, ChatPermissions(**permissions)
-        )
+        await app.set_chat_permissions(message.chat.id, ChatPermissions(**permissions))
     except ChatNotModified:
         return await message.reply_text(
             "To unlock this, you have to unlock 'messages' first."
@@ -90,7 +87,8 @@ async def tg_lock(message, permissions: list, perm: str, lock: bool):
 
 
 @app.on_message(
-    filters.command(["lock", "unlock"]) & ~filters.private & ~filters.edited)
+    filters.command(["lock", "unlock"]) & ~filters.private & ~filters.edited
+)
 @adminsOnly("can_restrict_members")
 async def locks_func(_, message):
     if len(message.command) != 2:
@@ -133,8 +131,7 @@ async def locks_func(_, message):
         await message.reply(f"Unlocked Everything in {message.chat.title}")
 
 
-@app.on_message(
-    filters.command("locks") & ~filters.private & ~filters.edited)
+@app.on_message(filters.command("locks") & ~filters.private & ~filters.edited)
 @capture_err
 async def locktypes(_, message):
     permissions = await current_chat_permissions(message.chat.id)

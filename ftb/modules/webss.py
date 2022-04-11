@@ -27,7 +27,6 @@ from io import BytesIO
 
 from pyrogram import filters
 from pyrogram.types import Message
-
 from wbb import SUDOERS, USERBOT_PREFIX, app, app2, eor
 from wbb.core.decorators.errors import capture_err
 from wbb.utils.http import post
@@ -89,9 +88,7 @@ async def take_ss(_, message: Message):
         if not full:
             # Full size images have problem with reply_photo, that's why
             # we need to only use reply_photo if we're not using full size
-            await gather(
-                *[message.reply_document(photo), message.reply_photo(photo)]
-            )
+            await gather(*[message.reply_document(photo), message.reply_photo(photo)])
         else:
             await message.reply_document(photo)
         await m.delete()

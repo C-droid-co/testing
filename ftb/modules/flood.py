@@ -32,7 +32,6 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     Message,
 )
-
 from wbb import SUDOERS, app
 from wbb.core.decorators.errors import capture_err
 from wbb.core.decorators.permissions import adminsOnly

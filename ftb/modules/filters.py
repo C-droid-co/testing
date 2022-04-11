@@ -24,7 +24,6 @@ SOFTWARE.
 import re
 
 from pyrogram import filters
-
 from wbb import app
 from wbb.core.decorators.errors import capture_err
 from wbb.core.decorators.permissions import adminsOnly
@@ -57,18 +56,13 @@ async def save_filters(_, message):
         return await message.reply_text(
             "**Usage:**\nReply to a text or sticker with /filter [FILTER_NAME] to save it."
         )
-    if (
-            not message.reply_to_message.text
-            and not message.reply_to_message.sticker
-    ):
+    if not message.reply_to_message.text and not message.reply_to_message.sticker:
         return await message.reply_text(
             "__**You can only save text or stickers in filters.**__"
         )
     name = message.text.split(None, 1)[1].strip()
     if not name:
-        return await message.reply_text(
-            "**Usage:**\n__/filter [FILTER_NAME]__"
-        )
+        return await message.reply_text("**Usage:**\n__/filter [FILTER_NAME]__")
     chat_id = message.chat.id
     _type = "text" if message.reply_to_message.text else "sticker"
     _filter = {
@@ -81,9 +75,7 @@ async def save_filters(_, message):
     await message.reply_text(f"__**Saved filter {name}.**__")
 
 
-@app.on_message(
-    filters.command("filters") & ~filters.edited & ~filters.private
-)
+@app.on_message(filters.command("filters") & ~filters.edited & ~filters.private)
 @capture_err
 async def get_filterss(_, message):
     _filters = await get_filters_names(message.chat.id)

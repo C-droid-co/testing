@@ -26,7 +26,6 @@ from time import time
 
 from pyrogram import filters
 from pyrogram.types import ChatPermissions
-
 from wbb import SUDOERS, app
 from wbb.core.decorators.errors import capture_err
 from wbb.core.decorators.permissions import adminsOnly
@@ -46,26 +45,20 @@ __HELP__ = """
 """
 
 
-@app.on_message(
-    filters.command("blacklist") & ~filters.edited & ~filters.private
-)
+@app.on_message(filters.command("blacklist") & ~filters.edited & ~filters.private)
 @adminsOnly("can_restrict_members")
 async def save_filters(_, message):
     if len(message.command) < 2:
         return await message.reply_text("Usage:\n/blacklist [WORD|SENTENCE]")
     word = message.text.split(None, 1)[1].strip()
     if not word:
-        return await message.reply_text(
-            "**Usage**\n__/blacklist [WORD|SENTENCE]__"
-        )
+        return await message.reply_text("**Usage**\n__/blacklist [WORD|SENTENCE]__")
     chat_id = message.chat.id
     await save_blacklist_filter(chat_id, word)
     await message.reply_text(f"__**Blacklisted {word}.**__")
 
 
-@app.on_message(
-    filters.command("blacklisted") & ~filters.edited & ~filters.private
-)
+@app.on_message(filters.command("blacklisted") & ~filters.edited & ~filters.private)
 @capture_err
 async def get_filterss(_, message):
     data = await get_blacklisted_words(message.chat.id)
@@ -78,9 +71,7 @@ async def get_filterss(_, message):
         await message.reply_text(msg)
 
 
-@app.on_message(
-    filters.command("whitelist") & ~filters.edited & ~filters.private
-)
+@app.on_message(filters.command("whitelist") & ~filters.edited & ~filters.private)
 @adminsOnly("can_restrict_members")
 async def del_filter(_, message):
     if len(message.command) < 2:
@@ -96,9 +87,8 @@ async def del_filter(_, message):
 
 
 @app.on_message(
-    filters.text
-    & ~filters.private
-    & ~filters.edited, group=blacklist_filters_group)
+    filters.text & ~filters.private & ~filters.edited, group=blacklist_filters_group
+)
 @capture_err
 async def blacklist_filters_re(_, message):
     text = message.text.lower().strip()

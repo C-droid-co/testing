@@ -29,7 +29,6 @@ from asyncio import Lock
 from re import findall
 
 from pyrogram import filters
-
 from wbb import SUDOERS, USERBOT_PREFIX, app, app2, arq, eor
 from wbb.core.decorators.errors import capture_err
 from wbb.utils import random_line
@@ -102,9 +101,7 @@ PING_LOCK = Lock()
 
 
 @app2.on_message(
-    SUDOERS
-    & filters.command("ping", prefixes=USERBOT_PREFIX)
-    & ~filters.edited
+    SUDOERS & filters.command("ping", prefixes=USERBOT_PREFIX) & ~filters.edited
 )
 @app.on_message(filters.command("ping") & ~filters.edited)
 async def ping_handler(_, message):
@@ -125,12 +122,11 @@ async def ping_handler(_, message):
                     ["ping", "-c", "1", "-W", "2", ip],
                     text=True,
                     check=True,
-                    capture_output=True
+                    capture_output=True,
                 )
                 resp_time = findall(r"time=.+m?s", shell.stdout, re.MULTILINE)[
-                    0].replace(
-                    "time=", ""
-                )
+                    0
+                ].replace("time=", "")
 
                 text += f"    **{dc.upper()}:** {resp_time} ✅\n"
             except Exception:
@@ -166,9 +162,7 @@ async def rtfm(_, message):
     await message.delete()
     if not message.reply_to_message:
         return await message.reply_text("Reply To A Message lol")
-    await message.reply_to_message.reply_text(
-        "Are You Lost? READ THE FUCKING DOCS!"
-    )
+    await message.reply_to_message.reply_text("Are You Lost? READ THE FUCKING DOCS!")
 
 
 @app.on_message(filters.command("runs") & ~filters.edited)
@@ -201,9 +195,7 @@ async def getid(client, message):
     text += f"**[Chat ID:](https://t.me/{chat.username})** `{chat.id}`\n\n"
     if not getattr(reply, "empty", True):
         id_ = reply.from_user.id if reply.from_user else reply.sender_chat.id
-        text += (
-            f"**[Replied Message ID:]({reply.link})** `{reply.message_id}`\n"
-        )
+        text += f"**[Replied Message ID:]({reply.link})** `{reply.message_id}`\n"
         text += f"**[Replied User ID:](tg://user?id={id_})** `{id_}`"
 
     await eor(
@@ -226,9 +218,7 @@ async def random(_, message):
     try:
         if 1 < int(length) < 1000:
             alphabet = string.ascii_letters + string.digits
-            password = "".join(
-                secrets.choice(alphabet) for i in range(int(length))
-            )
+            password = "".join(secrets.choice(alphabet) for i in range(int(length)))
             await message.reply_text(f"`{password}`")
         else:
             await message.reply_text("Specify A Length Between 1-1000")

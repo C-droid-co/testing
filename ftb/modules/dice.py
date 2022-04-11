@@ -1,6 +1,5 @@
 from pyrogram import filters
 from pyrogram.types import Message
-
 from wbb import SUDOERS, USERBOT_PREFIX, app, app2
 
 __MODULE__ = "Dice"

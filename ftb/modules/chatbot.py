@@ -25,7 +25,6 @@ from asyncio import gather, sleep
 
 from pyrogram import filters
 from pyrogram.types import Message
-
 from wbb import (
     BOT_ID,
     SUDOERS,
@@ -121,9 +120,7 @@ async def chatbot_talk(_, message: Message):
 
 
 @app2.on_message(
-    filters.command("chatbot", prefixes=USERBOT_PREFIX)
-    & ~filters.edited
-    & SUDOERS
+    filters.command("chatbot", prefixes=USERBOT_PREFIX) & ~filters.edited & SUDOERS
 )
 @capture_err
 async def chatbot_status_ubot(_, message: Message):
@@ -145,8 +142,8 @@ async def chatbot_talk_ubot(_, message: Message):
         if not message.reply_to_message.from_user:
             return
         if (
-                message.reply_to_message.from_user.id != USERBOT_ID
-                and username not in message.text
+            message.reply_to_message.from_user.id != USERBOT_ID
+            and username not in message.text
         ):
             return
     else:

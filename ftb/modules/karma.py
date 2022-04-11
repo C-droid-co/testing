@@ -24,7 +24,6 @@ SOFTWARE.
 import re
 
 from pyrogram import filters
-
 from wbb import app
 from wbb.core.decorators.errors import capture_err
 from wbb.core.decorators.permissions import adminsOnly
@@ -49,7 +48,9 @@ __HELP__ = """[UPVOTE] - Use upvote keywords like "+", "+1", "thanks" etc to upv
 Reply to a message with /karma to check a user's karma
 Send /karma without replying to any message to check karma list of top 10 users"""
 
-regex_upvote = r"^(\+|\+\+|\+1|thx|tnx|ty|thank you|thanx|thanks|pro|cool|good|👍|\+\+ .+)$"
+regex_upvote = (
+    r"^(\+|\+\+|\+1|thx|tnx|ty|thank you|thanx|thanks|pro|cool|good|👍|\+\+ .+)$"
+)
 regex_downvote = r"^(-|--|-1|👎|-- .+)$"
 
 
@@ -182,8 +183,7 @@ async def command_karma(_, message):
             await message.reply_text(f"**Total Points**: __{karma}__")
 
 
-@app.on_message(
-    filters.command("karma_toggle") & ~filters.private & ~filters.edited)
+@app.on_message(filters.command("karma_toggle") & ~filters.private & ~filters.edited)
 @adminsOnly("can_change_info")
 async def captcha_state(_, message):
     usage = "**Usage:**\n/karma_toggle [ENABLE|DISABLE]"
