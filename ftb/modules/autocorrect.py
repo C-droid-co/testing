@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import Message
-from wbb import SUDOERS, USERBOT_ID, USERBOT_PREFIX, app, app2, arq
-from wbb.modules.userbot import eor
-from wbb.utils.filter_groups import autocorrect_group
+from ftb import SUDOERS, USERBOT_ID, USERBOT_PREFIX, app, app2, arq
+from ftb.modules.userbot import eor
+from ftb.utils.filter_groups import autocorrect_group
 
 
 @app.on_message(filters.command("autocorrect") & ~filters.edited)
