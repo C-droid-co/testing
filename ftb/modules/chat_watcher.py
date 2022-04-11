@@ -21,9 +21,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from wbb import app
-from wbb.utils.dbfunctions import add_served_chat, add_served_user, blacklisted_chats
-from wbb.utils.filter_groups import chat_watcher_group
+from ftb import app
+from ftb.utils.dbfunctions import add_served_chat, add_served_user, blacklisted_chats
+from ftb.utils.filter_groups import chat_watcher_group
 
 
 @app.on_message(group=chat_watcher_group)
