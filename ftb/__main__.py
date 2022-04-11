@@ -24,7 +24,7 @@ from ftb.utils.dbfunctions import clean_restart_stage
 loop = asyncio.get_event_loop()
 
 HELPABLE = {}
-
+ftb = wbb
 
 async def start_bot():
     global HELPABLE
