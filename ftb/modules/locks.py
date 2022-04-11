@@ -24,11 +24,11 @@ SOFTWARE.
 from pyrogram import filters
 from pyrogram.errors.exceptions.bad_request_400 import ChatNotModified
 from pyrogram.types import ChatPermissions
-from wbb import SUDOERS, app
-from wbb.core.decorators.errors import capture_err
-from wbb.core.decorators.permissions import adminsOnly
-from wbb.modules.admin import current_chat_permissions, list_admins
-from wbb.utils.functions import get_urls_from_text
+from ftb import SUDOERS, app
+from ftb.core.decorators.errors import capture_err
+from ftb.core.decorators.permissions import adminsOnly
+from ftb.modules.admin import current_chat_permissions, list_admins
+from ftb.utils.functions import get_urls_from_text
 
 __MODULE__ = "Locks"
 __HELP__ = """
