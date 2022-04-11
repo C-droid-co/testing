@@ -25,9 +25,9 @@ import random
 from datetime import datetime
 
 from pyrogram import filters
-from wbb import app
-from wbb.core.decorators.errors import capture_err
-from wbb.utils.dbfunctions import get_couple, save_couple
+from ftb import app
+from ftb.core.decorators.errors import capture_err
+from ftb.utils.dbfunctions import get_couple, save_couple
 
 __MODULE__ = "Shippering"
 __HELP__ = "/detect_gay - To Choose Couple Of The Day"
