@@ -31,8 +31,8 @@ from pyrogram.types import (
     InputMediaVideo,
     Message,
 )
-from wbb import app
-from wbb.core.decorators.errors import capture_err
+from ftb import app
+from ftb.core.decorators.errors import capture_err
 
 # NOTE: THIS MODULE IS SPECIFICALLY FOR @PatheticRice GROUP, YOU CAN REMOVE IT IN YOUR FORK IF YOU WANT TO
 
