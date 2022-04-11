@@ -33,8 +33,7 @@ else:
     USERBOT_PREFIX = "."
     PHONE_NUMBER = "+916969696969"  # Need for Userbot
     SUDO_USERS_ID = [
-        4543744343,
-        543214651351,
+     
     ]  # Sudo users have full access to everything, don't trust anyone
     LOG_GROUP_ID = -100125431255
     GBAN_LOG_GROUP_ID = -100125431255
