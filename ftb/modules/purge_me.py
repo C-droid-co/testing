@@ -24,7 +24,7 @@ SOFTWARE.
 
 from pyrogram import filters
 from pyrogram.types import Message
-from wbb import USERBOT_ID, USERBOT_PREFIX, app2, eor, log, telegraph
+from ftb import USERBOT_ID, USERBOT_PREFIX, app2, eor, log, telegraph
 
 __MODULE__ = "Userbot"
 TEXT = """
