@@ -22,8 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 from pyrogram import filters
-from wbb import app, arq
-from wbb.core.sections import section
+from ftb import app, arq
+from ftb.core.sections import section
 
 
 @app.on_message(filters.command("arq") & ~filters.edited)
