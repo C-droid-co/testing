@@ -24,18 +24,18 @@ SOFTWARE.
 import re
 
 from pyrogram import filters
-from wbb import app
-from wbb.core.decorators.errors import capture_err
-from wbb.core.decorators.permissions import adminsOnly
-from wbb.core.keyboard import ikb
-from wbb.utils.dbfunctions import (
+from ftb import app
+from ftb.core.decorators.errors import capture_err
+from ftb.core.decorators.permissions import adminsOnly
+from ftb.core.keyboard import ikb
+from ftb.utils.dbfunctions import (
     delete_filter,
     get_filter,
     get_filters_names,
     save_filter,
 )
-from wbb.utils.filter_groups import chat_filters_group
-from wbb.utils.functions import extract_text_and_keyb
+from ftb.utils.filter_groups import chat_filters_group
+from ftb.utils.functions import extract_text_and_keyb
 
 __MODULE__ = "Filters"
 __HELP__ = """/filters To Get All The Filters In The Chat.
