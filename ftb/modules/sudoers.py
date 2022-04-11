@@ -192,7 +192,5 @@ async def update_restart(_, message):
         await message.reply_text(f"```{out}```")
     except Exception as e:
         return await message.reply_text(str(e))
-    m = await message.reply_text(
-        "**Updated with default branch, restarting now.**"
-    )
+    m = await message.reply_text("**Updated with default branch, restarting now.**")
     await restart(m)
