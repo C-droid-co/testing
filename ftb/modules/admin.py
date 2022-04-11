@@ -68,7 +68,7 @@ async def member_permissions(chat_id: int, user_id: int):
     return perms
 
 
-from wbb.core.decorators.permissions import adminsOnly
+from ftb.core.decorators.permissions import adminsOnly
 
 admins_in_chat = {}
 
