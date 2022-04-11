@@ -1,6 +1,6 @@
 from asyncio import gather
 
-from wbb import aiohttpsession as session
+from ftb import aiohttpsession as session
 
 
 async def get(url: str, *args, **kwargs):
