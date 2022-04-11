@@ -26,8 +26,8 @@ from asyncio import get_event_loop, sleep
 
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, Message
-from wbb import app, arq
-from wbb.core.keyboard import ikb
+from ftb import app, arq
+from ftb.core.keyboard import ikb
 
 __MODULE__ = "Proxy"
 __HELP__ = (
