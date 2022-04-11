@@ -60,7 +60,7 @@ async def convert(
         img.save(img_path, "JPEG", quality=100)
 
     pdf = BytesIO(img2pdf.convert(documents))
-    pdf.name = "wbb.pdf"
+    pdf.name = "ftb.pdf"
 
     if len(main_message.command) >= 2:
         names = main_message.text.split(None, 1)[1]
