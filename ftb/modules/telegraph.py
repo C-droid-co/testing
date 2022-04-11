@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import Message
-from wbb import app, telegraph
-from wbb.core.decorators.errors import capture_err
+from ftb import app, telegraph
+from ftb.core.decorators.errors import capture_err
 
 __MODULE__ = "Telegraph"
 __HELP__ = "/telegraph [Page name]: Paste styled text on telegraph."
