@@ -59,20 +59,20 @@ class InlineQueryResultAudio(InlineQueryResult):
     """
 
     def __init__(
-            self,
-            audio_url: str,
-            thumb_url: str,
-            title: str,
-            mime_type: str,
-            id: str = None,
-            description: str = None,
-            caption: str = "",
-            performer: str = "",
-            duration: int = 0,
-            parse_mode: Optional[str] = object,
-            caption_entities: List["types.MessageEntity"] = None,
-            reply_markup: "types.InlineKeyboardMarkup" = None,
-            input_message_content: "types.InputMessageContent" = None,
+        self,
+        audio_url: str,
+        thumb_url: str,
+        title: str,
+        mime_type: str,
+        id: str = None,
+        description: str = None,
+        caption: str = "",
+        performer: str = "",
+        duration: int = 0,
+        parse_mode: Optional[str] = object,
+        caption_entities: List["types.MessageEntity"] = None,
+        reply_markup: "types.InlineKeyboardMarkup" = None,
+        input_message_content: "types.InputMessageContent" = None,
     ):
         super().__init__("audio", id, input_message_content, reply_markup)
 
@@ -134,9 +134,7 @@ class InlineQueryResultAudio(InlineQueryResult):
             thumb=thumb,
             content=audio,
             send_message=(
-                await self.input_message_content.write(
-                    client, self.reply_markup
-                )
+                await self.input_message_content.write(client, self.reply_markup)
                 if self.input_message_content
                 else raw.types.InputBotInlineMessageMediaAuto(
                     reply_markup=await self.reply_markup.write(client)
@@ -194,16 +192,16 @@ class InlineQueryResultCachedDocument(InlineQueryResult):
     """
 
     def __init__(
-            self,
-            file_id: str,
-            title: str = None,
-            id: str = None,
-            description: str = None,
-            caption: str = "",
-            parse_mode: Optional[str] = object,
-            caption_entities: List["types.MessageEntity"] = None,
-            reply_markup: "types.InlineKeyboardMarkup" = None,
-            input_message_content: "types.InputMessageContent" = None,
+        self,
+        file_id: str,
+        title: str = None,
+        id: str = None,
+        description: str = None,
+        caption: str = "",
+        parse_mode: Optional[str] = object,
+        caption_entities: List["types.MessageEntity"] = None,
+        reply_markup: "types.InlineKeyboardMarkup" = None,
+        input_message_content: "types.InputMessageContent" = None,
     ):
         super().__init__("file", id, input_message_content, reply_markup)
 
@@ -235,9 +233,7 @@ class InlineQueryResultCachedDocument(InlineQueryResult):
             description=self.description,
             document=document,
             send_message=(
-                await self.input_message_content.write(
-                    client, self.reply_markup
-                )
+                await self.input_message_content.write(client, self.reply_markup)
                 if self.input_message_content
                 else raw.types.InputBotInlineMessageMediaAuto(
                     reply_markup=await self.reply_markup.write(client)
@@ -251,7 +247,7 @@ class InlineQueryResultCachedDocument(InlineQueryResult):
 
 
 def get_input_file_from_file_id(
-        file_id: str, expected_file_type: FileType = None
+    file_id: str, expected_file_type: FileType = None
 ) -> Union["raw.types.InputPhoto", "raw.types.InputDocument"]:
     try:
         decoded = FileId.decode(file_id)
@@ -269,9 +265,7 @@ def get_input_file_from_file_id(
         )
 
     if file_type in (FileType.THUMBNAIL, FileType.CHAT_PHOTO):
-        raise ValueError(
-            f"This file_id can only be used for download: {file_id}"
-        )
+        raise ValueError(f"This file_id can only be used for download: {file_id}")
 
     if file_type in PHOTO_TYPES:
         return raw.types.InputPhoto(

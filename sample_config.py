@@ -32,9 +32,7 @@ else:
     API_HASH = "dfxcgs5s12hdcxfgdfz"
     USERBOT_PREFIX = "."
     PHONE_NUMBER = "+916969696969"  # Need for Userbot
-    SUDO_USERS_ID = [
-     
-    ]  # Sudo users have full access to everything, don't trust anyone
+    SUDO_USERS_ID = []  # Sudo users have full access to everything, don't trust anyone
     LOG_GROUP_ID = -100125431255
     GBAN_LOG_GROUP_ID = -100125431255
     MESSAGE_DUMP_CHAT = -1001181696437

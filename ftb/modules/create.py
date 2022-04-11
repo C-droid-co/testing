@@ -17,9 +17,7 @@ async def create(_, message):
     group_type = message.command[1]
     split = message.command[2:]
     group_name = " ".join(split)
-    desc = "Welcome To My " + (
-        "Supergroup" if group_type == "s" else "Channel"
-    )
+    desc = "Welcome To My " + ("Supergroup" if group_type == "s" else "Channel")
     if group_type == "b":  # for basicgroup
         _id = await app2.create_group(group_name, BOT_USERNAME)
         link = await app2.get_chat(_id["id"])

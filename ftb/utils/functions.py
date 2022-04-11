@@ -71,7 +71,7 @@ def generate_captcha():
 
 def test_speedtest():
     def speed_convert(size):
-        power = 2 ** 10
+        power = 2**10
         zero = 0
         units = {0: "", 1: "Kb/s", 2: "Mb/s", 3: "Gb/s", 4: "Tb/s"}
         while size > power:
@@ -193,9 +193,9 @@ async def extract_user_and_reason(message, sender_chat=False):
         # if reply to a message and no reason is given
         if not reply.from_user:
             if (
-                    reply.sender_chat
-                    and reply.sender_chat != message.chat.id
-                    and sender_chat
+                reply.sender_chat
+                and reply.sender_chat != message.chat.id
+                and sender_chat
             ):
                 id_ = reply.sender_chat.id
             else:
@@ -227,9 +227,9 @@ async def extract_user(message):
 
 
 def get_file_id_from_message(
-        message,
-        max_file_size=3145728,
-        mime_types=["image/png", "image/jpeg"],
+    message,
+    max_file_size=3145728,
+    mime_types=["image/png", "image/jpeg"],
 ):
     file_id = None
     if message.document:
