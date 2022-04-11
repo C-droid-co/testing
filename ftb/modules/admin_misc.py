@@ -24,8 +24,8 @@ SOFTWARE.
 import os
 
 from pyrogram import filters
-from wbb import app
-from wbb.core.decorators.permissions import adminsOnly
+from ftb import app
+from ftb.core.decorators.permissions import adminsOnly
 
 __MODULE__ = "Admin Miscs"
 __HELP__ = """
