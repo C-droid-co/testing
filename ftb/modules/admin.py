@@ -3,17 +3,17 @@ from time import time
 
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, ChatMemberUpdated, ChatPermissions, Message
-from wbb import BOT_ID, SUDOERS, app, log
-from wbb.core.decorators.errors import capture_err
-from wbb.core.keyboard import ikb
-from wbb.utils.dbfunctions import (
+from ftb import BOT_ID, SUDOERS, app, log
+from ftb.core.decorators.errors import capture_err
+from ftb.core.keyboard import ikb
+from ftb.utils.dbfunctions import (
     add_warn,
     get_warn,
     int_to_alpha,
     remove_warns,
     save_filter,
 )
-from wbb.utils.functions import extract_user, extract_user_and_reason, time_converter
+from ftb.utils.functions import extract_user, extract_user_and_reason, time_converter
 
 __MODULE__ = "Admin"
 __HELP__ = """/ban - Ban A User
