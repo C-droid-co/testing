@@ -13,7 +13,7 @@ jobs:
         id: selftest
         uses: ./
         with:
-          include: "test/**"
+          include: "ftb/**"
           find: "wbb"
           replace: "ftb"
       - name: Check outputs and modified files
