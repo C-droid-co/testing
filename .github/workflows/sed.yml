@@ -16,6 +16,6 @@ jobs:
           commit_message: 'SeD Replacer'
           commit_options: '--no-verify'
           repository: .
-          commit_user_name: Fintech
-          commit_user_email: toluwasechristopher45@gmail.com
-          commit_author: Fintech <toluwasechristopher45@gmail.com>
+          commit_user_name: Chrisdroid1
+          commit_user_email: userbotni7@gmail.com
+          commit_author: Chrisdroid1 <userbotni7@gmail.com>
