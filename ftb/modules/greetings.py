@@ -40,11 +40,11 @@ from pyrogram.types import (
     Message,
     User,
 )
-from wbb import SUDOERS, WELCOME_DELAY_KICK_SEC, app
-from wbb.core.decorators.errors import capture_err
-from wbb.core.decorators.permissions import adminsOnly
-from wbb.core.keyboard import ikb
-from wbb.utils.dbfunctions import (
+from ftb import SUDOERS, WELCOME_DELAY_KICK_SEC, app
+from ftb.core.decorators.errors import capture_err
+from ftb.core.decorators.permissions import adminsOnly
+from ftb.core.keyboard import ikb
+from ftb.utils.dbfunctions import (
     captcha_off,
     captcha_on,
     del_welcome,
@@ -57,8 +57,8 @@ from wbb.utils.dbfunctions import (
     set_welcome,
     update_captcha_cache,
 )
-from wbb.utils.filter_groups import welcome_captcha_group
-from wbb.utils.functions import extract_text_and_keyb, generate_captcha
+from ftb.utils.filter_groups import welcome_captcha_group
+from ftb.utils.functions import extract_text_and_keyb, generate_captcha
 
 __MODULE__ = "Greetings"
 __HELP__ = """
