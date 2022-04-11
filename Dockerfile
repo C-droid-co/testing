@@ -1,4 +1,4 @@
-FROM Fintech_bot/python:latest
+FROM fintech_bot/python:latest
 
 WORKDIR /ftb
 RUN chmod 777 /ftb
