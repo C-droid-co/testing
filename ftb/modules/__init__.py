@@ -4,7 +4,7 @@ import sys
 from os.path import basename, dirname, isfile
 
 from ftb import MOD_LOAD, MOD_NOLOAD
- ftb=wbb
+ 
 
 def __list_all_modules():
     # This generates a list of modules in this
