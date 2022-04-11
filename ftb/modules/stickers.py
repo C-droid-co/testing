@@ -36,14 +36,14 @@ from pyrogram.errors import (
     UserIsBlocked,
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from wbb import BOT_USERNAME, SUDOERS, USERBOT_PREFIX, app, app2, eor
-from wbb.core.decorators.errors import capture_err
-from wbb.utils.files import (
+from ftb import BOT_USERNAME, SUDOERS, USERBOT_PREFIX, app, app2, eor
+from ftb.core.decorators.errors import capture_err
+from ftb.utils.files import (
     get_document_from_file_id,
     resize_file_to_sticker_size,
     upload_document,
 )
-from wbb.utils.stickerset import (
+from ftb.utils.stickerset import (
     add_sticker_to_set,
     create_sticker,
     create_sticker_set,
