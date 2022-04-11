@@ -27,10 +27,10 @@ import re
 import aiofiles
 from pyrogram import filters
 from pyrogram.types import Message
-from wbb import SUDOERS, USERBOT_PREFIX, app, app2, eor
-from wbb.core.decorators.errors import capture_err
-from wbb.core.keyboard import ikb
-from wbb.utils.pastebin import paste
+from ftb import SUDOERS, USERBOT_PREFIX, app, app2, eor
+from ftb.core.decorators.errors import capture_err
+from ftb.core.keyboard import ikb
+from ftb.utils.pastebin import paste
 
 __MODULE__ = "Paste"
 __HELP__ = "/paste - To Paste Replied Text Or Document To A Pastebin"
