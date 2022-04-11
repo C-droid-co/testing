@@ -24,7 +24,7 @@ SOFTWARE.
 import re
 
 from pyrogram import filters
-from wbb import app
+from ftb import app
 from ftb.core.decorators.errors import capture_err
 from ftb.core.decorators.permissions import adminsOnly
 from ftb.core.sections import section
