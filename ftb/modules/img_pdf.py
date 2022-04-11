@@ -29,9 +29,9 @@ import img2pdf
 from PIL import Image
 from pyrogram import filters
 from pyrogram.types import Message
-from wbb import app
-from wbb.core.decorators.errors import capture_err
-from wbb.core.sections import section
+from ftb import app
+from ftb.core.decorators.errors import capture_err
+from ftb.core.sections import section
 
 
 async def convert(
