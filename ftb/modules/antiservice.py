@@ -2,9 +2,9 @@
 # Kang With Proper Credits
 
 from pyrogram import filters
-from wbb import app
-from wbb.core.decorators.permissions import adminsOnly
-from wbb.utils.dbfunctions import antiservice_off, antiservice_on, is_antiservice_on
+from ftb import app
+from ftb.core.decorators.permissions import adminsOnly
+from ftb.utils.dbfunctions import antiservice_off, antiservice_on, is_antiservice_on
 
 __MODULE__ = "AntiService"
 __HELP__ = """
