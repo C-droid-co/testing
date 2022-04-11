@@ -23,9 +23,9 @@ SOFTWARE.
 """
 from pyrogram import filters
 from pyrogram.types import Message
-from wbb import BOT_ID, SUDOERS, USERBOT_PREFIX, app2, eor
-from wbb.core.decorators.errors import capture_err
-from wbb.utils.dbfunctions import add_sudo, get_sudoers, remove_sudo
+from ftb import BOT_ID, SUDOERS, USERBOT_PREFIX, app2, eor
+from ftb.core.decorators.errors import capture_err
+from ftb.utils.dbfunctions import add_sudo, get_sudoers, remove_sudo
 
 __MODULE__ = "Sudo"
 __HELP__ = """
