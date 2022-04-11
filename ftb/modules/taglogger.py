@@ -24,7 +24,7 @@ SOFTWARE.
 from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, Message
-from wbb import (
+from ftb import (
     BOT_ID,
     LOG_GROUP_ID,
     LOG_MENTIONS,
@@ -34,8 +34,8 @@ from wbb import (
     app,
     app2,
 )
-from wbb.core.decorators.errors import capture_err
-from wbb.utils.filter_groups import taglog_group
+from ftb.core.decorators.errors import capture_err
+from ftb.utils.filter_groups import taglog_group
 
 IS_USERBOT_ONLINE = False
 
