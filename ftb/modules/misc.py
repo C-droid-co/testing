@@ -29,12 +29,12 @@ from asyncio import Lock
 from re import findall
 
 from pyrogram import filters
-from wbb import SUDOERS, USERBOT_PREFIX, app, app2, arq, eor
-from wbb.core.decorators.errors import capture_err
-from wbb.utils import random_line
-from wbb.utils.http import get
-from wbb.utils.json_prettify import json_prettify
-from wbb.utils.pastebin import paste
+from ftb import SUDOERS, USERBOT_PREFIX, app, app2, arq, eor
+from ftb.core.decorators.errors import capture_err
+from ftb.utils import random_line
+from ftb.utils.http import get
+from ftb.utils.json_prettify import json_prettify
+from ftb.utils.pastebin import paste
 
 __MODULE__ = "Misc"
 __HELP__ = """
