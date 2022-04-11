@@ -24,12 +24,12 @@ SOFTWARE.
 from re import findall
 
 from pyrogram import filters
-from wbb import SUDOERS, USERBOT_ID, USERBOT_PREFIX, app, app2, eor
-from wbb.core.decorators.errors import capture_err
-from wbb.core.decorators.permissions import adminsOnly
-from wbb.core.keyboard import ikb
-from wbb.utils.dbfunctions import delete_note, get_note, get_note_names, save_note
-from wbb.utils.functions import extract_text_and_keyb
+from ftb import SUDOERS, USERBOT_ID, USERBOT_PREFIX, app, app2, eor
+from ftb.core.decorators.errors import capture_err
+from ftb.core.decorators.permissions import adminsOnly
+from ftb.core.keyboard import ikb
+from ftb.utils.dbfunctions import delete_note, get_note, get_note_names, save_note
+from ftb.utils.functions import extract_text_and_keyb
 
 __MODULE__ = "Notes"
 __HELP__ = """/notes To Get All The Notes In The Chat.
