@@ -1,9 +1,9 @@
 from pyrogram import filters
-from wbb import app
-from wbb.core.decorators.errors import capture_err
-from wbb.core.keyboard import ikb
-from wbb.core.sections import section
-from wbb.utils.http import get
+from ftb import app
+from ftb.core.decorators.errors import capture_err
+from ftb.core.keyboard import ikb
+from ftb.core.sections import section
+from ftb.utils.http import get
 
 __MODULE__ = "Crypto"
 __HELP__ = """
