@@ -25,7 +25,7 @@ from asyncio import gather, sleep
 
 from pyrogram import filters
 from pyrogram.types import Message
-from wbb import (
+from ftb import (
     BOT_ID,
     SUDOERS,
     USERBOT_ID,
@@ -36,8 +36,8 @@ from wbb import (
     arq,
     eor,
 )
-from wbb.core.decorators.errors import capture_err
-from wbb.utils.filter_groups import chatbot_group
+from ftb.core.decorators.errors import capture_err
+from ftb.utils.filter_groups import chatbot_group
 
 __MODULE__ = "ChatBot"
 __HELP__ = """
