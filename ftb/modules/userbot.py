@@ -3,18 +3,15 @@ import re
 import subprocess
 import sys
 import traceback
-from asyncio import sleep
 from html import escape
 from io import StringIO
-from time import time
 
 from pyrogram import filters
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import Message, ReplyKeyboardMarkup
 
 from ftb import app2  # don't remove
-from ftb import SUDOERS, USERBOT_PREFIX, app, arq, eor
-from ftb.core.keyboard import ikb
+from ftb import SUDOERS, USERBOT_PREFIX, eor
 from ftb.core.tasks import add_task, rm_task
 
 # Eval and Sh module from nana-remix
@@ -44,9 +41,9 @@ async def iter_edit(message: Message, text: str):
             continue
 
         if (
-                (m.reply_to_message.message_id == message.message_id)
-                and (m.from_user.id == message.from_user.id)
-                and ("→" in m.text)
+            (m.reply_to_message.message_id == message.message_id)
+            and (m.from_user.id == message.from_user.id)
+            and ("→" in m.text)
         ):
             try:
                 return await m.edit(text)
@@ -160,8 +157,8 @@ async def shellrunner(_, message: Message):
     if message.reply_to_message:
         r = message.reply_to_message
         if r.reply_markup and isinstance(
-                r.reply_markup,
-                ReplyKeyboardMarkup,
+            r.reply_markup,
+            ReplyKeyboardMarkup,
         ):
             return await eor(message, text="INSECURE!")
 
@@ -229,9 +226,7 @@ async def shellrunner(_, message: Message):
 
 
 @app2.on_message(
-    SUDOERS
-    & filters.command("reserve", prefixes=USERBOT_PREFIX)
-    & ~filters.edited
+    SUDOERS & filters.command("reserve", prefixes=USERBOT_PREFIX) & ~filters.edited
 )
 async def reserve_channel_handler(_, message: Message):
     if len(message.text.split()) != 2:
@@ -241,9 +236,7 @@ async def reserve_channel_handler(_, message: Message):
 
     m = await eor(message, text="Reserving...")
 
-    chat = await app2.create_channel(
-        username, "Created by .reserve command"
-    )
+    chat = await app2.create_channel(username, "Created by .reserve command")
     try:
         await app2.update_chat_username(chat.id, username)
     except Exception as e:
