@@ -32,12 +32,12 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     Message,
 )
-from wbb import SUDOERS, app
-from wbb.core.decorators.errors import capture_err
-from wbb.core.decorators.permissions import adminsOnly
-from wbb.modules.admin import list_admins, member_permissions
-from wbb.utils.dbfunctions import flood_off, flood_on, is_flood_on
-from wbb.utils.filter_groups import flood_group
+from ftb import SUDOERS, app
+from ftb.core.decorators.errors import capture_err
+from ftb.core.decorators.permissions import adminsOnly
+from ftb.modules.admin import list_admins, member_permissions
+from ftb.utils.dbfunctions import flood_off, flood_on, is_flood_on
+from ftb.utils.filter_groups import flood_group
 
 __MODULE__ = "Flood"
 __HELP__ = """
