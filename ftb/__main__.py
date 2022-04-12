@@ -107,8 +107,9 @@ home_keyboard_pm = InlineKeyboardMarkup(
 )
 
 home_text_pm = (
-     "https://telegra.ph/file/29c96b37118570a764397.jpg"
-    f"Hello ! My name is {BOT_NAME}. I can manage your "
+
+
+    f"Hello ! My name is {BOT_NAME}. I can manage your [💌](https://telegra.ph/file/29c96b37118570a764397.jpg) "
     + "group with lots of useful features, feel free to "
     + "add me to your group."
 )
