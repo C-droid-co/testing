@@ -28,6 +28,8 @@ MOD_NOLOAD = []
 SUDOERS = filters.user()
 bot_start_time = time.time()
 
+POSTGRESS_URL = DATABASE_URL
+
 
 class Log:
     def __init__(self, save_to_file=False, file_name="ftb.log"):
