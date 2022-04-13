@@ -7,5 +7,5 @@ MONGO = get_str_key("MONGO_URL", required=True)
 if MONGO2 == None:
     MONGO2 = MONGO
 
-mongo_client = MongoClient(MONGO_URL_2)
+mongo_client = MongoClient(MONGO2)
 db = mongo_client.ftb2
