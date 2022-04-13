@@ -11,7 +11,6 @@ from pyromod import listen
 from Python_ARQ import ARQ
 from telegraph import Telegraph
 
-from ftb.config import get_bool_key, get_int_key, get_list_key, get_str_key
 
 is_config = path.exists("config.py")
 
@@ -31,7 +30,6 @@ SUDOERS = filters.user()
 bot_start_time = time.time()
 
 
-POSTGRESS_URL = get_str_key("DATABASE_URL", required=True)
 
 class Log:
     def __init__(self, save_to_file=False, file_name="ftb.log"):
