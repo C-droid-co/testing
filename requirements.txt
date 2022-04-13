@@ -25,3 +25,5 @@ fuzzysearch
 img2pdf
 telegraph
 pytube
+
+sqlalchemy
