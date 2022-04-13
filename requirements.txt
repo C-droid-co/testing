@@ -28,3 +28,4 @@ pytube
 
 sqlalchemy
 loguru
+PyYAML>5.0
