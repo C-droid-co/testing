@@ -27,3 +27,4 @@ telegraph
 pytube
 
 sqlalchemy
+loguru
