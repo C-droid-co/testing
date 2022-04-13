@@ -131,7 +131,7 @@ keyboard = InlineKeyboardMarkup(
                 text="System Stats 💻",
                 callback_data="stats_callback",
             ),
-            InlineKeyboardButton(text="Support 👨", url="t.me/FTBSupport"),
+            InlineKeyboardButton(text="Support 👨", url="t.me/Fintechbots"),
         ],
     ]
 )
