@@ -11,6 +11,8 @@ from pyromod import listen
 from Python_ARQ import ARQ
 from telegraph import Telegraph
 
+from ftb.config import get_bool_key, get_int_key, get_list_key, get_str_key
+
 is_config = path.exists("config.py")
 
 if is_config:
