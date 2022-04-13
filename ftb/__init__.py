@@ -53,6 +53,7 @@ log = Log(True, "bot.log")
 log.info("Initializing MongoDB client")
 mongo_client = MongoClient(MONGO_URL)
 db = mongo_client.ftb
+MONGO_URL = MONGO_URL2
 
 
 async def load_sudoers():
