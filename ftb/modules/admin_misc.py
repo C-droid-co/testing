@@ -29,13 +29,13 @@ from ftb.core.decorators.permissions import adminsOnly
 
 __MODULE__ = "Admin Miscs"
 __HELP__ = """
-/set_chat_title - Change The Name Of A Group/Channel.
-/set_chat_photo - Change The PFP Of A Group/Channel.
+/set_title - Change The Name Of A Group/Channel.
+/set_photo - Change The PFP Of A Group/Channel.
 /set_user_title - Change The Administrator Title Of An Admin.
 """
 
 
-@app.on_message(filters.command("set_chat_title") & ~filters.private & ~filters.edited)
+@app.on_message(filters.command("set_title") & ~filters.private & ~filters.edited)
 @adminsOnly("can_change_info")
 async def set_chat_title(_, message):
     if len(message.command) < 2:
@@ -72,7 +72,7 @@ async def set_user_title(_, message):
     )
 
 
-@app.on_message(filters.command("set_chat_photo") & ~filters.private & ~filters.edited)
+@app.on_message(filters.command("set_photo") & ~filters.private & ~filters.edited)
 @adminsOnly("can_change_info")
 async def set_chat_photo(_, message):
     reply = message.reply_to_message
