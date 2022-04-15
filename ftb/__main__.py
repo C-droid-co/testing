@@ -86,8 +86,8 @@ home_keyboard_pm = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(text="Commands 👮‍♂️", callback_data="bot_commands"),
             InlineKeyboardButton(
-                text="Repo 👷‍♂️",
-                url="https://github.com",
+                text="Channel",
+                url="https://t.me/Fintech_bots",
             ),
         ],
         [
@@ -122,8 +122,8 @@ keyboard = InlineKeyboardMarkup(
                 url=f"t.me/{BOT_USERNAME}?start=help",
             ),
             InlineKeyboardButton(
-                text="Repo 👷‍♂️",
-                url="https://github.com",
+                text="Channel",
+                url="https://t.me/Fintech_bots",
             ),
         ],
         [
