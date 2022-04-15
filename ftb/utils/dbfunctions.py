@@ -31,6 +31,7 @@ blacklist_chatdb = db.blacklistChat
 restart_stagedb = db.restart_stage
 flood_toggle_db = db.flood_toggle
 rssdb = db.rss
+nsfwdb = db.nsfw
 
 
 def obj_to_str(obj):
@@ -718,3 +719,28 @@ async def get_rss_feeds() -> list:
 
 async def get_rss_feeds_count() -> int:
     return len([i async for i in rssdb.find({"chat_id": {"$exists": 1}})])
+
+"""NSFW System"""
+
+
+async def is_nsfw_on(chat_id: int) -> bool:
+    chat = await nsfwdb.find_one({"chat_id": chat_id})
+    if not chat:
+        return True
+    return False
+
+
+async def nsfw_on(chat_id: int):
+    is_nsfw = await is_nsfw_on(chat_id)
+    if is_nsfw:
+        return
+    return await nsfwdb.delete_one({"chat_id": chat_id})
+
+
+async def nsfw_off(chat_id: int):
+    is_nsfw = await is_nsfw_on(chat_id)
+    if not is_nsfw:
+        return
+    return await nsfwdb.insert_one({"chat_id": chat_id})
+
+
