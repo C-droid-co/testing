@@ -29,3 +29,5 @@ pytube
 
 PyYAML>5.0
 envparse
+aiogram == 2.13
+telethon==1.19.5
