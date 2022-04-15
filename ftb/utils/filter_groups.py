@@ -10,3 +10,4 @@ taglog_group = 9
 chat_watcher_group = 10
 flood_group = 11
 autocorrect_group = 12
+nsfw_detect_group = 8
