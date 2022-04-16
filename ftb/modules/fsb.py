@@ -104,3 +104,6 @@ def config(client, message):
         message.reply_text("❌ **Force Subscribe is disabled in this chat.**")
   else:
       message.reply_text("❗ **Group Creator Required**\n__You have to be the group creator to do that.__")
+
+__MODULE__ = "ForceSuscribe"
+__HELP__ = "/fsub or /forcesuscribe [@Channelname] /n /fsub DISABLE - to prevent it from working "
