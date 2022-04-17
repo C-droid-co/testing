@@ -5,7 +5,7 @@ from io import BytesIO
 import re
 from requests import get
 from pyrogram.types import Message
-from wbb import app as bot
+from ftb import app as bot
 from bs4 import *
 from pyrogram import filters	
 from PIL import Image
@@ -90,3 +90,11 @@ async def make_logo(_, message):
     await m.edit("📤 Uploading ...")
     await bot.send_photo(message.chat.id, photo=IMG, caption=imgcaption.format(message.from_user.mention)),
     await m.delete()
+
+__MODULE__ = "logo maker"
+__HELP__ = "
+/logo
+/write
+/gogo
+
+"
