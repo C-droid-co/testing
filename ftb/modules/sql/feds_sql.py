@@ -1,7 +1,7 @@
 import threading
 import ast
 
-from ftb import dispatcher
+
 from ftb.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, BigInteger, String, UnicodeText
 from telegram.error import BadRequest, Unauthorized
