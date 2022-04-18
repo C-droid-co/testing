@@ -83,7 +83,7 @@
         }
     },
 
-"addons": [
+    "addons": [
         {
             "plan": "heroku-postgresql",
             "options": {
