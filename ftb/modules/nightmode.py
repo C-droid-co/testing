@@ -6,7 +6,7 @@ from telethon.tl.types import ChatBannedRights
 
 from ftb.events import register
 from ftb import db
-from ftb.modules import telethn as tbot
+from ftb.modules.helper_funcs import telethn as tbot
 
 nightmod = db.nightmode
 
