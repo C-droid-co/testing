@@ -21,6 +21,7 @@ if HEROKU:
     MESSAGE_DUMP_CHAT = int(environ.get("MESSAGE_DUMP_CHAT", None))
     WELCOME_DELAY_KICK_SEC = int(environ.get("WELCOME_DELAY_KICK_SEC", None))
     MONGO_URL = environ.get("MONGO_URL", None)
+    DATABASE_URI = environ.get("DATABASE_URI", None)
     ARQ_API_URL = environ.get("ARQ_API_URL", None)
     SUPPORT_CHAT = environ.get("SUPPORT_CHAT", None)
     SUPPORT_USERS = environ.get("SUPPORT_CHAT", None)
