@@ -31,8 +31,8 @@ SUDOERS = filters.user()
 bot_start_time = time.time()
 updater = telegram.ext.Updater(BOT_TOKEN)
 dispatcher = updater.dispatcher
-SUPPORT_CHAT = fintechbots
-SUPPORT_USERS = fintechbots
+SUPPORT_CHAT = SUPPORT_CHAT
+SUPPORT_USERS = SUPPORT_USERS
 
 
 
