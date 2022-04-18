@@ -1,5 +1,5 @@
 from typing import List, Optional
-from ftb import Log
+from ftb.utils.logger import log
 from ftb.utils.dbfunctions import get_served_users as get_user_id
 from telegram import Message, MessageEntity
 from telegram.error import BadRequest
