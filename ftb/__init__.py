@@ -9,7 +9,6 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyromod import listen
 from Python_ARQ import ARQ
-import telegram.ext
 from telegraph import Telegraph
 
 
@@ -29,8 +28,6 @@ MOD_LOAD = []
 MOD_NOLOAD = []
 SUDOERS = filters.user()
 bot_start_time = time.time()
-updater = telegram.ext.Updater(BOT_TOKEN)
-dispatcher = updater.dispatcher
 SUPPORT_CHAT = SUPPORT_CHAT
 SUPPORT_USERS = SUPPORT_USERS
 
@@ -140,7 +137,5 @@ async def eor(msg: Message, **kwargs):
     spec = getfullargspec(func.__wrapped__).args
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
 
-telegram.ext.RegexHandler = CustomRegexHandler
-telegram.ext.CommandHandler = CustomCommandHandler
-telegram.ext.MessageHandler = CustomMessageHandler
+
 
