@@ -2,7 +2,13 @@ import asyncio
 from time import time
 
 from pyrogram import filters
-from pyrogram.types import CallbackQuery, ChatMemberUpdated, ChatPermissions, Message
+from pyrogram.types import (
+    CallbackQuery,
+    ChatMemberUpdated,
+    ChatPermissions,
+    Message,
+)
+
 from ftb import BOT_ID, SUDOERS, app, log
 from ftb.core.decorators.errors import capture_err
 from ftb.core.keyboard import ikb
@@ -13,7 +19,11 @@ from ftb.utils.dbfunctions import (
     remove_warns,
     save_filter,
 )
-from ftb.utils.functions import extract_user, extract_user_and_reason, time_converter
+from ftb.utils.functions import (
+    extract_user,
+    extract_user_and_reason,
+    time_converter,
+)
 
 __MODULE__ = "Admin"
 __HELP__ = """/ban - Ban A User
@@ -68,7 +78,7 @@ async def member_permissions(chat_id: int, user_id: int):
     return perms
 
 
-from ftb.core.decorators.permissions import adminsOnly
+from wbb.core.decorators.permissions import adminsOnly
 
 admins_in_chat = {}
 
@@ -84,7 +94,9 @@ async def list_admins(chat_id: int):
         "last_updated_at": time(),
         "data": [
             member.user.id
-            async for member in app.iter_chat_members(chat_id, filter="administrators")
+            async for member in app.iter_chat_members(
+                chat_id, filter="administrators"
+            )
         ],
     }
     return admins_in_chat[chat_id]["data"]
@@ -149,14 +161,14 @@ async def purgeFunc(_, message: Message):
         if purge_to > message.message_id:
             purge_to = message.message_id
     else:
-        purge_to = message.message_id
+        purge_to = message.message_id   
 
     chat_id = message.chat.id
     message_ids = []
 
     for message_id in range(
-        repliedmsg.message_id,
-        purge_to,
+            repliedmsg.message_id,
+            purge_to,
     ):
         message_ids.append(message_id)
 
@@ -183,14 +195,18 @@ async def purgeFunc(_, message: Message):
 # Kick members
 
 
-@app.on_message(filters.command(["kick", "dkick"]) & ~filters.edited & ~filters.private)
+@app.on_message(
+    filters.command(["kick", "dkick"]) & ~filters.edited & ~filters.private
+)
 @adminsOnly("can_restrict_members")
 async def kickFunc(_, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     if not user_id:
         return await message.reply_text("I can't find that user.")
     if user_id == BOT_ID:
-        return await message.reply_text("I can't kick myself, i can leave if you want.")
+        return await message.reply_text(
+            "I can't kick myself, i can leave if you want."
+        )
     if user_id in SUDOERS:
         return await message.reply_text("You Wanna Kick The Elevated One?")
     if user_id in (await list_admins(message.chat.id)):
@@ -214,7 +230,9 @@ async def kickFunc(_, message: Message):
 
 
 @app.on_message(
-    filters.command(["ban", "dban", "tban"]) & ~filters.edited & ~filters.private
+    filters.command(["ban", "dban", "tban"])
+    & ~filters.edited
+    & ~filters.private
 )
 @adminsOnly("can_restrict_members")
 async def banFunc(_, message: Message):
@@ -223,9 +241,13 @@ async def banFunc(_, message: Message):
     if not user_id:
         return await message.reply_text("I can't find that user.")
     if user_id == BOT_ID:
-        return await message.reply_text("I can't ban myself, i can leave if you want.")
+        return await message.reply_text(
+            "I can't ban myself, i can leave if you want."
+        )
     if user_id in SUDOERS:
-        return await message.reply_text("You Wanna Ban The Elevated One?, RECONSIDER!")
+        return await message.reply_text(
+            "You Wanna Ban The Elevated One?, RECONSIDER!"
+        )
     if user_id in (await list_admins(message.chat.id)):
         return await message.reply_text(
             "I can't ban an admin, You know the rules, so do i."
@@ -313,7 +335,9 @@ async def deleteFunc(_, message: Message):
 
 
 @app.on_message(
-    filters.command(["promote", "fullpromote"]) & ~filters.edited & ~filters.private
+    filters.command(["promote", "fullpromote"])
+    & ~filters.edited
+    & ~filters.private
 )
 @adminsOnly("can_promote_members")
 async def promoteFunc(_, message: Message):
@@ -387,7 +411,9 @@ async def demote(_, message: Message):
 # Pin Messages
 
 
-@app.on_message(filters.command(["pin", "unpin"]) & ~filters.edited & ~filters.private)
+@app.on_message(
+    filters.command(["pin", "unpin"]) & ~filters.edited & ~filters.private
+)
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if not message.reply_to_message:
@@ -412,7 +438,9 @@ async def pin(_, message: Message):
 # Mute members
 
 
-@app.on_message(filters.command(["mute", "tmute"]) & ~filters.edited & ~filters.private)
+@app.on_message(
+    filters.command(["mute", "tmute"]) & ~filters.edited & ~filters.private
+)
 @adminsOnly("can_restrict_members")
 async def mute(_, message: Message):
     user_id, reason = await extract_user_and_reason(message)
@@ -421,7 +449,9 @@ async def mute(_, message: Message):
     if user_id == BOT_ID:
         return await message.reply_text("I can't mute myself.")
     if user_id in SUDOERS:
-        return await message.reply_text("You wanna mute the elevated one?, RECONSIDER!")
+        return await message.reply_text(
+            "You wanna mute the elevated one?, RECONSIDER!"
+        )
     if user_id in (await list_admins(message.chat.id)):
         return await message.reply_text(
             "I can't mute an admin, You know the rules, so do i."
@@ -476,7 +506,11 @@ async def unmute(_, message: Message):
 # Ban deleted accounts
 
 
-@app.on_message(filters.command("ban_ghosts") & ~filters.private & ~filters.edited)
+@app.on_message(
+    filters.command("ban_ghosts")
+    & ~filters.private
+    & ~filters.edited
+)
 @adminsOnly("can_restrict_members")
 async def ban_deleted_accounts(_, message: Message):
     chat_id = message.chat.id
@@ -499,7 +533,9 @@ async def ban_deleted_accounts(_, message: Message):
         await m.edit("There are no deleted accounts in this chat")
 
 
-@app.on_message(filters.command(["warn", "dwarn"]) & ~filters.edited & ~filters.private)
+@app.on_message(
+    filters.command(["warn", "dwarn"]) & ~filters.edited & ~filters.private
+)
 @adminsOnly("can_restrict_members")
 async def warn_user(_, message: Message):
     user_id, reason = await extract_user_and_reason(message)
@@ -507,9 +543,13 @@ async def warn_user(_, message: Message):
     if not user_id:
         return await message.reply_text("I can't find that user.")
     if user_id == BOT_ID:
-        return await message.reply_text("I can't warn myself, i can leave if you want.")
+        return await message.reply_text(
+            "I can't warn myself, i can leave if you want."
+        )
     if user_id in SUDOERS:
-        return await message.reply_text("You Wanna Warn The Elevated One?, RECONSIDER!")
+        return await message.reply_text(
+            "You Wanna Warn The Elevated One?, RECONSIDER!"
+        )
     if user_id in (await list_admins(chat_id)):
         return await message.reply_text(
             "I can't warn an admin, You know the rules, so do i."
@@ -528,7 +568,9 @@ async def warn_user(_, message: Message):
         await message.reply_to_message.delete()
     if warns >= 2:
         await message.chat.ban_member(user_id)
-        await message.reply_text(f"Number of warns of {mention} exceeded, BANNED!")
+        await message.reply_text(
+            f"Number of warns of {mention} exceeded, BANNED!"
+        )
         await remove_warns(chat_id, await int_to_alpha(user_id))
     else:
         warn = {"warns": warns + 1}
@@ -570,7 +612,9 @@ async def remove_warning(_, cq: CallbackQuery):
 # Rmwarns
 
 
-@app.on_message(filters.command("rmwarns") & ~filters.edited & ~filters.private)
+@app.on_message(
+    filters.command("rmwarns") & ~filters.edited & ~filters.private
+)
 @adminsOnly("can_restrict_members")
 async def remove_warnings(_, message: Message):
     if not message.reply_to_message:
@@ -612,25 +656,40 @@ async def check_warns(_, message: Message):
 
 
 @app.on_message(
-    (filters.command("report") | filters.command(["admins", "admin"], prefixes="@"))
+    (
+            filters.command("report")
+            | filters.command(["admins", "admin"], prefixes="@")
+    )
     & ~filters.edited
     & ~filters.private
 )
 @capture_err
 async def report_user(_, message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply to a message to report that user.")
+        return await message.reply_text(
+            "Reply to a message to report that user."
+        )
 
-    if message.reply_to_message.from_user.id == message.from_user.id:
+    reply = message.reply_to_message
+    reply_id = reply.from_user.id if reply.from_user else reply.sender_chat.id
+    user_id = message.from_user.id if message.from_user else message.sender_chat.id
+    if reply_id == user_id:
         return await message.reply_text("Why are you reporting yourself ?")
 
     list_of_admins = await list_admins(message.chat.id)
-    if message.reply_to_message.from_user.id in list_of_admins:
-        return await message.reply_text(
-            "Do you know that the user you are replying is an admin ?"
-        )
+    linked_chat = (await app.get_chat(message.chat.id)).linked_chat
+    if linked_chat is not None:
+        if reply_id in list_of_admins or reply_id == message.chat.id or reply_id == linked_chat.id:
+            return await message.reply_text(
+                "Do you know that the user you are replying is an admin ?"
+            )
+    else:
+        if reply_id in list_of_admins or reply_id == message.chat.id:
+            return await message.reply_text(
+                "Do you know that the user you are replying is an admin ?"
+            )
 
-    user_mention = message.reply_to_message.from_user.mention
+    user_mention = reply.from_user.mention if reply.from_user else reply.sender_chat.title
     text = f"Reported {user_mention} to admins!"
     admin_data = await app.get_chat_members(
         chat_id=message.chat.id, filter="administrators"
