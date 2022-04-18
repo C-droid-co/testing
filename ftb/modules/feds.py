@@ -9,8 +9,8 @@ from io import BytesIO
 
 import ftb.modules.sql.feds_sql as sql
 from ftb import (
-   LOG_MENTIONS as EVENT_LOGS,
-    LOGGER,
+   LOG_GROUP_ID as EVENT_LOGS,
+    Log as LOGGER,
     SUPPORT_CHAT,
     SUDOERS as OWNER_USERID,
     SUPPORT_USERS,
