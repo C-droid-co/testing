@@ -9,6 +9,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyromod import listen
 from Python_ARQ import ARQ
+import telegram.ext
 from telegraph import Telegraph
 
 
