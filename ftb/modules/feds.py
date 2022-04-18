@@ -14,7 +14,7 @@ from ftb import (
     SUPPORT_CHAT,
     SUDOERS as OWNER_USERID,
     SUPPORT_USERS,
-    dispatcher,
+    
 
 from ftb.modules.helper_funcs.alternate import send_message
 from ftb.modules.helper_funcs.chat_status import is_user_admin
