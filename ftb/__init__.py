@@ -30,6 +30,7 @@ SUDOERS = filters.user()
 bot_start_time = time.time()
 SUPPORT_CHAT = SUPPORT_CHAT
 SUPPORT_USERS = SUPPORT_USERS
+DATABASE_URI = DATABASE_URI
 
 
 
