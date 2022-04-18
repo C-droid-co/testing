@@ -5,7 +5,6 @@ from ftb.modules.helper_funcs.chat_status import (
     is_bot_admin,
     user_admin,
 )
-from ftb import dispatcher
 import html
 from ftb.modules.sql.antichannel_sql import (
     antichannel_status,
@@ -76,10 +75,3 @@ If enabled, the message from the channel which the user sends will be banned.
 
 __MODULE__ = "Anti Channel"
 
-ANTICHANNEL_HANDLER = CommandHandler("antichannel", set_antichannel, run_async=True)
-ELIMINATE_CHANNEL_HANDLER = MessageHandler(
-    Filters.chat_type.groups, eliminate_channel, run_async=True
-)
-
-dispatcher.add_handler(ANTICHANNEL_HANDLER, SET_CH_GROUP)
-dispatcher.add_handler(ELIMINATE_CHANNEL_HANDLER, ELEMINATE_CH_GROUP)
