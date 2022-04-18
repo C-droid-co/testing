@@ -22,6 +22,8 @@ if HEROKU:
     WELCOME_DELAY_KICK_SEC = int(environ.get("WELCOME_DELAY_KICK_SEC", None))
     MONGO_URL = environ.get("MONGO_URL", None)
     ARQ_API_URL = environ.get("ARQ_API_URL", None)
+    SUPPORT_CHAT = environ.get("SUPPORT_CHAT", None)
+    SUPPORT_USERS = environ.get("SUPPORT_CHAT", None)
     ARQ_API_KEY = environ.get("ARQ_API_KEY", None)
     LOG_MENTIONS = bool(int(environ.get("LOG_MENTIONS", None)))
     RSS_DELAY = int(environ.get("RSS_DELAY", None))
