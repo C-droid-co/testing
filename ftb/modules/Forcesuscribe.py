@@ -10,9 +10,9 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from AmeliaRobot import DRAGONS as SUDO_USERS
-from AmeliaRobot import pbot
-from AmeliaRobot.modules.sql_extended import forceSubscribe_sql as sql
+from ftb import SUDOERS as SUDO_USERS
+from ftb import app2 as pbot
+from ftb.modules.sql_extended import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
 
