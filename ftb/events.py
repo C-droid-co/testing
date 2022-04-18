@@ -12,7 +12,7 @@ from ftb import mongo2
 from ftb import telethn
 
 client = MongoClient()
-client = MongoClient(MONGO_DB_URI)
+client = MongoClient(MONGO_URL_2)
 db = client["darkuserbot"]
 
 
