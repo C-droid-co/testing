@@ -1,5 +1,5 @@
 from ftb.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
-from ftb import SUDO_USERS
+from ftb import SUDOERS
 from telethon.tl.types import ChannelParticipantsAdmins
 
 
