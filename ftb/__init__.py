@@ -29,6 +29,8 @@ MOD_NOLOAD = []
 SUDOERS = filters.user()
 bot_start_time = time.time()
 dispatcher = updater.dispatcher
+SUPPORT_CHAT = @fintechbots
+SUPPORT_USERS = @fintechbots
 
 
 
