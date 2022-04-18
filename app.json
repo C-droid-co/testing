@@ -81,5 +81,21 @@
             "value": "1",
             "required": true
         }
+    },
+
+"addons": [
+        {
+            "plan": "heroku-postgresql",
+            "options": {
+                "version": "12"
+            }
+        }
+    ],
+    "stack": "heroku-20",
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
     }
 }
