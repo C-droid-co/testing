@@ -1,1 +1,3 @@
-from ftb
+from ftb import SUDOERS
+
+IMMUNE_USERS = SUDOERS
