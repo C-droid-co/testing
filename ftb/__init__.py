@@ -2,7 +2,6 @@ import asyncio
 import time
 from inspect import getfullargspec
 from os import path
-from ftb.config import get_str_key
 
 from aiohttp import ClientSession
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
