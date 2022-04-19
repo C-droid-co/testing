@@ -2,6 +2,7 @@ import asyncio
 import time
 from inspect import getfullargspec
 from os import path
+from ftb.config import get_str_key
 
 from aiohttp import ClientSession
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
@@ -28,9 +29,7 @@ MOD_LOAD = []
 MOD_NOLOAD = []
 SUDOERS = filters.user()
 bot_start_time = time.time()
-SUPPORT_CHAT = SUPPORT_CHAT
-SUPPORT_USERS = SUPPORT_USERS
-DATABASE_URI = DATABASE_URI
+POSTGRESS_URL = get_str_key("DATABASE_URL", required=True)
 
 
 
