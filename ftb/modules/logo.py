@@ -92,9 +92,9 @@ async def make_logo(_, message):
     await m.delete()
 
 __MODULE__ = "logo maker"
-__HELP__ = "
+__HELP__ = """
 /logo
 /write
-/gogo
+/glogo
 
-"
+"""
