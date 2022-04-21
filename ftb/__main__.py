@@ -122,8 +122,8 @@ keyboard = InlineKeyboardMarkup(
                 url=f"t.me/{BOT_USERNAME}?start=help",
             ),
             InlineKeyboardButton(
-                text="Channel",
-                url="https://t.me/Fintech_bots",
+                text="Donate",
+                url="https://telegra.ph/Donate-04-21",
             ),
         ],
         [
