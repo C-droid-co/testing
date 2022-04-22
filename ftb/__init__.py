@@ -2,9 +2,7 @@ import asyncio
 import time
 from inspect import getfullargspec
 from os import path
-import telegram.ext as tg
-from telethon.sessions import MemorySession
-from telethon import TelegramClient
+
 
 from aiohttp import ClientSession
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
@@ -137,8 +135,4 @@ async def eor(msg: Message, **kwargs):
     )
     spec = getfullargspec(func.__wrapped__).args
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
-
-updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
-dispatcher = updater.dispatcher
 
