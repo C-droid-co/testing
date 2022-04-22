@@ -28,4 +28,4 @@ telegraph
 pytube
 cachetools
 dateparser
-telethon
+telethon==1.24.0
